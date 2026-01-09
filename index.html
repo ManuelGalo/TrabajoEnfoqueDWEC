@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DavanteDent - Gestión de Citas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Logo  -->
+        <div class="logo">
+            <img src="logo.webp"/>
+            <h1> DavanteDent</h1>
+            <p class="tagline">Gestión de citas</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Añadir/Modificar Cita</h2>
+            <form id="appointmentForm">
+                <!-- Datos del paciente -->
+                <fieldset>
+                    <legend>Datos del Paciente</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+
+                    <label for="fechaNacimiento">Fecha Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                </fieldset>
+
+                <!-- Datos de la cita -->
+                <fieldset>
+                    <legend>Datos de la Cita</legend>
+                    <label for="fechaCita">Fecha:</label>
+                    <input type="date" id="fechaCita" name="fechaCita" required>
+
+                    <label for="horaCita">Hora:</label>
+                    <input type="time" id="horaCita" name="horaCita" required>
+
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" name="observaciones" rows="3"></textarea>
+                </fieldset>
+
+                <button type="submit">Guardar Cita</button>
+                <div id="errorMessages" class="error"></div>
+            </form>
+        </section>
+
+        <section id="table-section">
+            <h2>Listado de Citas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Orden</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>DNI</th>
+                        <th>Teléfono</th>
+                        <th>Fecha Cita</th>
+                        <th>Hora Cita</th>
+                        <th>Observaciones</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentsTableBody">
+                    <!-- Las citas se cargarán aquí dinámicamente -->
+                    <tr id="emptyRow">
+                        <td colspan="9">No hay citas registradas.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>DavanteDent - Clínica Dental</h3>
+            <p>Dirección: Calle Principal, 123 - 11450 Sanlúcar</p>
+            <p>Email: info@davantedent.com</p>
+            <p>Teléfono: 956 123 456</p>
+            <p>Horario: Lunes a Viernes 9:00 - 20:00h</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
